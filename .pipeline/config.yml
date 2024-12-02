@@ -26,14 +26,12 @@ steps:
 stages:
   'Confirm':
     manualConfirmation: false
-
-  Acceptance:
+Acceptance:
     cloudFoundryDeploy: false
     npmExecuteEndToEndTests: false
-  Compliance:
+Compliance:
     sonarExecuteScan: false
-
-  Release:
+Release:
     cloudFoundryDeploy: true
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "4aa88d79trial"
