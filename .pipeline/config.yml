@@ -8,8 +8,6 @@
 # This is a YAML-file. YAML is an indentation-sensitive file format. Please make sure to properly indent changes to it.
 ###
 
-
-
 ### General project setup
 general:
   inferBuildTool: true
@@ -32,10 +30,10 @@ Acceptance:
 Compliance:
     sonarExecuteScan: false
 Release:
+   cloudFoundryDeploy: true
    cfTargets:
      - org: '4aa88d79trial'
        space: 'dev'
        apiEndpoint: 'https://api.cf.us10-001.hana.ondemand.com'
        appName: 'capapp'
-       manifest: 'manifest.yml'
        credentialsId: 'deploy-cf-cred'
