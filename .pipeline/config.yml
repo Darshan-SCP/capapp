@@ -27,6 +27,20 @@ stages:
   'Confirm':
     manualConfirmation: false
 
+  Acceptance:
+    cloudFoundryDeploy: false
+    npmExecuteEndToEndTests: false
+  Compliance:
+    sonarExecuteScan: false
+
+  Release:
+    cloudFoundryDeploy: true
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+    cfOrg: "4aa88d79trial"
+    cfSpace: "dev"
+    cfAppName: "capapp"
+    cfCredentialsId: "deploy-cf-cred"
+    tmsUpload: false
 #  Integration:
 #    credentials:
 #      - alias: 'mySystemAlias'
