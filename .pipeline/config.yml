@@ -11,17 +11,6 @@
 ### General project setup
 general:
   buildTool: "mta"
-
-### Step-specific configuration
-steps:
-artifactPrepareVersion:
-  versioningType: cloud_noTag
-npmExecuteLint:
-  failOnError: true
-cloudFoundryDeploy:
-  mtaDeployParameters: "-f --version-rule ALL"
-
-### Stage-specific configuration
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
@@ -33,11 +22,18 @@ stages:
     npmExecuteEndToEndTests: false
   Compliance:
     sonarExecuteScan: false
-Release:
-  cloudFoundryDeploy: true
-  cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-  cfOrg: "4aa88d79trial"
-  cfSpace: "dev"
-  cfAppName: "capapp"
-  cfCredentialsId: "deploy-cf-cred"
-  tmsUpload: false
+  Release:
+    cloudFoundryDeploy: true
+    cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+    cfOrg: "4aa88d79trial"
+    cfSpace: "dev"
+    cfAppName: "capapp"
+    cfCredentialsId: "deploy-cf-cred"
+    tmsUpload: false
+steps:
+  artifactPrepareVersion:
+    versioningType: "cloud_noTag"
+  npmExecuteLint:
+    failOnError: true
+  cloudFoundryDeploy:
+    mtaDeployParameters: "-f --version-rule ALL"
