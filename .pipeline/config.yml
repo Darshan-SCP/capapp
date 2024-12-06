@@ -10,24 +10,28 @@
 
 ### General project setup
 general:
-  inferBuildTool: true
+  buildTool: "mta"
 
 ### Step-specific configuration
 steps:
-  mavenExecute:
-    dockerImage: devxci/mbtci:1.0.14
-
-  artifactPrepareVersion:
+artifactPrepareVersion:
     versioningType: cloud_noTag
+npmExecuteLint:
+    failOnError: true
+cloudFoundryDeploy:
+    mtaDeployParameters: "-f --version-rule ALL"
 
 ### Stage-specific configuration
 stages:
-  'Confirm':
-    manualConfirmation: false
-Acceptance:
+  Build:
+    mavenExecuteStaticCodeChecks: false
+    npmExecuteLint: false
+  Additional Unit Tests:
+    npmExecuteScripts: false
+  Acceptance:
     cloudFoundryDeploy: false
     npmExecuteEndToEndTests: false
-Compliance:
+  Compliance:
     sonarExecuteScan: false
 Release:
    cloudFoundryDeploy: true
