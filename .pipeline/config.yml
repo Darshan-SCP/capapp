@@ -15,11 +15,11 @@ general:
 ### Step-specific configuration
 steps:
 artifactPrepareVersion:
-    versioningType: cloud_noTag
+  versioningType: cloud_noTag
 npmExecuteLint:
-    failOnError: true
+  failOnError: true
 cloudFoundryDeploy:
-    mtaDeployParameters: "-f --version-rule ALL"
+  mtaDeployParameters: "-f --version-rule ALL"
 
 ### Stage-specific configuration
 stages:
@@ -34,10 +34,10 @@ stages:
   Compliance:
     sonarExecuteScan: false
 Release:
-   cloudFoundryDeploy: true
-   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
-   cfOrg: "4aa88d79trial"
-   cfSpace: "dev"
-   cfAppName: "capapp"
-   cfCredentialsId: "deploy-cf-cred"
-   tmsUpload: false
+  cloudFoundryDeploy: true
+  cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+  cfOrg: "4aa88d79trial"
+  cfSpace: "dev"
+  cfAppName: "capapp"
+  cfCredentialsId: "deploy-cf-cred"
+  tmsUpload: false
