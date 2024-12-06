@@ -17,8 +17,7 @@ modules:
     path: gen/srv
     parameters:
       buildpack: nodejs_buildpack
-      readiness-health-check-type: http
-      readiness-health-check-http-endpoint: /health
+      memory: 256M
     build-parameters:
       builder: npm
     provides:
