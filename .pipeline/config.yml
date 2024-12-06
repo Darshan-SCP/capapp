@@ -35,9 +35,9 @@ stages:
     sonarExecuteScan: false
 Release:
    cloudFoundryDeploy: true
-   cfTargets:
-     - org: '4aa88d79trial'
-       space: 'dev'
-       apiEndpoint: 'https://api.cf.us10-001.hana.ondemand.com'
-       appName: 'capapp'
-       credentialsId: 'deploy-cf-cred'
+   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+   cfOrg: "4aa88d79trial"
+   cfSpace: "dev"
+   cfAppName: "capapp"
+   cfCredentialsId: "deploy-cf-cred"
+   tmsUpload: false
